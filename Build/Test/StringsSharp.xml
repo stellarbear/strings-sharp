@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>StringsSharp</name>
+    </assembly>
+    <members>
+        <member name="T:StringsSharp.CEncoding">
+            <summary>
+            CStringsSharp subclass. 
+            </summary>
+        </member>
+        <member name="M:StringsSharp.CEncoding.#ctor(System.String,System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            Encoding ctor()
+            </summary>
+            See <see href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd317756(v=vs.85).aspx"/> for codes
+            <param name="Name">Probe naming</param>
+            <param name="Codepage">Set codepage. Ascii: 1251. UTF16: 1200</param>
+            <param name="CharRange">Set character range for encoding type. Ascii: "[\x20-\x7E]". UTF16: "[\u0020-\u007E]". </param>
+            <param name="Min">Opt. Minimum string length.</param>
+            <param name="Max">Opt. Maximum string length.</param>
+        </member>
+        <member name="M:StringsSharp.CEncoding.UpdateLimits(System.Int32,System.Int32)">
+            <summary>
+            Set string limitations.
+            </summary>
+            <param name="Min">Opt. Minimum string length.</param>
+            <param name="Max">Opt. Maximum string length.</param>
+        </member>
+        <member name="T:StringsSharp.CStringsSharp">
+            <summary>
+            CStringsSharp main class. 
+            </summary>
+        </member>
+        <member name="M:StringsSharp.CStringsSharp.#ctor(StringsSharp.CEncoding)">
+            <summary>
+            Default ctor(). Sets string encoding which will be searched in files.
+            </summary>
+            <param name="Encoding">String encoding.</param>
+        </member>
+        <member name="M:StringsSharp.CStringsSharp.Scan(System.String,System.Int32)">
+            <summary>
+            Scan file for string entries.
+            </summary>
+            <exception cref="T:System.IO.FileNotFoundException">Thrown when file path is set incorrectly.</exception>
+            <param name="Filename">Filename to be scanned.</param>
+            <param name="ChunkMBSize">Huge files will be split in chunks (>= 1, default == 256).</param>
+        </member>
+        <member name="M:StringsSharp.CStringsSharp.Dispose">
+            <summary>
+            Disposable extension. 
+            </summary>
+        </member>
+    </members>
+</doc>
